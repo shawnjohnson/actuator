@@ -11,10 +11,9 @@ spec:
     spec:
       containers:
       - name: actuator-sample
-        image: registry.gitlab.com/shawnjohnson/actuator-sample
-        imagePullPolicy: Always
+        image: ${REPOSITORY_TAG}
+        imagePullPolicy: Never
         ports:
         - containerPort: 8080
-      imagePullSecrets:
-        - name: registry.gitlab.com
+
 
