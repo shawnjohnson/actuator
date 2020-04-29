@@ -25,6 +25,9 @@ pipeline {
       }
 
       stage('Build and Push Image') {
+         agent {
+                docker { image 'maven:3-alpine' }
+            }
          steps {
            sh 'docker image build -t ${REPOSITORY_TAG} .'
          }
